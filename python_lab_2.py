@@ -22,16 +22,17 @@ def lower_up(lower, upper):
             print(x)
 
 
-#def all_the_args(*args, **kwargs):
+# def all_the_args(*args, **kwargs):
 
-#	""" 2: Return an array. Use * to expand positional args and use ** to expand keyword args
+#       """ 2: Return an array. Use * to expand positional args and use ** to
+#       expand keyword args
 
-#	>>> all_the_args(1, 2, a=3, b=4)
-#    	(1, 2)
-#    	{"a": 3, "b": 4}
-#	"""
-	#print(args)
-	#print(str(kwargs).replace('\'', '"'))
+#       >>> all_the_args(1, 2, a=3, b=4)
+#       (1, 2)
+#       {"a": 3, "b": 4}
+#       """
+        # print(args)
+        # print(str(kwargs).replace('\'', '"'))
 
 def may_20 (*tup):
 	""" 3: Definir una tupla con 10 números. Imprimir la cantidad de números superiores a 20.
