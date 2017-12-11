@@ -148,7 +148,6 @@ def is_prime(n):
 
 
 def factorial(n):
-    import math
     """ 12: Return the factorial of n, an exact integer >= 0.
     If the result is small enough to fit in an int, return an int.
     Else return a long.
@@ -161,14 +160,15 @@ def factorial(n):
     """
     result = 1
     factor = 2
-    #if n == 0:
+    # if n == 0:
     #    return 1
-    #else:
+    # else:
     #    return n * factorial(n-1)
     while factor <= n:
         result *= factor
         factor += 1
     return result
+
 
 def to_roman(n):
     """ 13: Convert number integer to Roman numeral
