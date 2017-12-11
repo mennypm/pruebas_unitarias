@@ -84,16 +84,17 @@ def is_vocal(x):
 
 
 def is_leap_year(year):
-	""" 7: Determines if a year is a leap year.
-	>>> is_leap_year(2016)
-	True
-	"""
-	if year%400==0:
-		print(True)
-	elif year%4==0 and year%100!=0:
-		print(True)
-	else:
-		print(False)
+    """ 7: Determines if a year is a leap year.
+    >>> is_leap_year(2016)
+    True
+    """
+    if year % 400 == 0:
+        print(True)
+    elif year % 4 == 0 and year % 100 != 0:
+        print(True)
+    else:
+        print(False)
+
 
 def has_uppercase(word):
 	""" 8: Evaluate if a word has uppercase letters
