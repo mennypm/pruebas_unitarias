@@ -190,21 +190,22 @@ def to_roman(n):
 
 
 def rima(word1, word2):
-	""" 14: Indica si dos palabrar riman. Si coinciden las 3 ultimas letras rima,
-	si ncoinciden solo 2 rima un poco, si coincide solo 1 no rima.
-	>>> rima('flor', 'coliflor')
-	rima
-	>>> rima('amar', 'plantar')
-	rima un poco
-	>>> rima('azucar', 'barrer')
-	no rima
-	"""
-	if word1[-3:]== word2[-3:]:
-		print("rima")
-	elif word1[-2:]== word2[-2:]:
-		print("rima un poco")
-	else:
-		print("no rima")
+    """ 14: Indica si dos palabrar riman. Si coinciden las 3 ultimas letras rima,
+    si ncoinciden solo 2 rima un poco, si coincide solo 1 no rima.
+    >>> rima('flor', 'coliflor')
+    rima
+    >>> rima('amar', 'plantar')
+    rima un poco
+    >>> rima('azucar', 'barrer')
+    no rima
+    """
+    if word1[-3:] == word2[-3:]:
+        print("rima")
+    elif word1[-2:] == word2[-2:]:
+        print("rima un poco")
+    else:
+        print("no rima")
+
 
 def capital(pesos, interes, anios):
 	""" 15: Pide una cantidad de pesos, una tasa de interés y un numero de años. Muestra en cuanto se habrá convertido el
