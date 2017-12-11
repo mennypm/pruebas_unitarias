@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.5"
+  
+# command for installing dependencies
+install:
+  - pip install flake8
+
+# command for running tests
+script:
+  - flake8 python_lab_2.py
+  - python3 -m doctest python_lab_2.py
+  - flake8 --max-complexity=2
