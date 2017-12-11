@@ -105,17 +105,18 @@ def has_uppercase(word):
 
 
 def contar_vocales(cadena):
-	""" 9: Return number of vocales in a word.
-	>>> contar_vocales('murcielago')
- 	5
- 	"""
-	sum=0
-	for x in cadena:
-		if x=="a" or x=="e" or x=="i" or x=="o" or x=="u":
-			sum+=1
-		else:
-			pass
-	print(sum)
+    """ 9: Return number of vocales in a word.
+    >>> contar_vocales('murcielago')
+    5
+    """
+    sum = 0
+    for x in cadena:
+        if x == "a" or x == "e" or x == "i" or x == "o" or x == "u":
+            sum += 1
+        else:
+            pass
+    print(sum)
+
 
 def square(lists):
     """ 10: Calculate the square of the numbers in a list
