@@ -131,11 +131,15 @@ def contar_vocales(cadena):
     """
     sum = 0
     for x in cadena:
-        if x == "a" or x == "e" or x == "i" or x == "o" or x == "u":
-            sum += 1
-        else:
-            pass
+        sum += is_vowel(x)
     print(sum)
+
+
+def is_vowel(x):
+    if x == "a" or x == "e" or x == "i" or x == "o" or x == "u":
+        return 1
+    else:
+        return 0
 
 
 def square(lists):
