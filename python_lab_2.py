@@ -63,11 +63,12 @@ def word_filter(list_of_words, n):
 
 
 def string_length(list):
-	""" 5: imprime el largo de una cadena de caracteres
-	>>> string_length("popularity")
-	10
-	"""
-	print(len(list))
+    """ 5: imprime el largo de una cadena de caracteres
+    >>> string_length("popularity")
+    10
+    """
+    print(len(list))
+
 
 def is_vocal(x):
 	""" 6: Determines if it is vocal
