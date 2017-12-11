@@ -34,19 +34,20 @@ def lower_up(lower, upper):
         # print(args)
         # print(str(kwargs).replace('\'', '"'))
 
-def may_20 (*tup):
-	""" 3: Definir una tupla con 10 números. Imprimir la cantidad de números superiores a 20.
-	>>> may_20(10, 16, 22, 26, 27, 30)
-	22, 26, 27, 30
-	"""
-	y=""
-	for x in tup:
-		if x >20:
-			if y =="":
-				y=str(x)
-			else:
-				y= y + ', ' + str(x)
-	print(y)
+def may_20(*tup):
+    """ 3: Definir una tupla con 10 números. Imprimir la cantidad
+        de números superiores a 20.
+    >>> may_20(10, 16, 22, 26, 27, 30)
+    22, 26, 27, 30
+    """
+    y = ""
+    for x in tup:
+        if x > 20:
+            if y == "":
+                y = str(x)
+            else:
+                y = y + ', ' + str(x)
+    print(y)
 
 def word_filter(list_of_words, n):
     """ 4: Filtra las palabras que contienen más de n caracteres.
