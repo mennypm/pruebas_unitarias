@@ -208,10 +208,12 @@ def rima(word1, word2):
 
 
 def capital(pesos, interes, anios):
-	""" 15: Pide una cantidad de pesos, una tasa de interés y un numero de años. Muestra en cuanto se habrá convertido el
-	capital inicial transcurridos esos años si cada año se aplica la tasa de interés introducida.
-	>>> capital(10000, 4.5, 20)
-	24117.14
-	"""
-	resultado=pesos*(1+interes/100)**anios
-	print(round(resultado,2))
+    """ 15: Pide una cantidad de pesos, una tasa de interés y un
+    número de años. Muestra en cuanto se habrá convertido el
+    capital inicial transcurridos esos años si cada año se
+    aplica la tasa de interés introducida.
+    >>> capital(10000, 4.5, 20)
+    24117.14
+    """
+    resultado = pesos * (1 + interes / 100) ** anios
+    print(round(resultado, 2))
