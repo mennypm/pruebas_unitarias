@@ -106,7 +106,11 @@ def is_leap_year(year):
     """
     if year % 400 == 0:
         print(True)
-    elif year % 4 == 0 and year % 100 != 0:
+    helper_is_leap_year_second_condition(year)
+
+
+def helper_is_leap_year_second_condition(year):
+    if year % 4 == 0 and year % 100 != 0:
         print(True)
     else:
         print(False)
