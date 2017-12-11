@@ -175,15 +175,19 @@ def to_roman(n):
     >>> to_roman(598)
     [DXCVIII]
     """
-    romanos = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'),
-        (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
-    numero=""
+    romanos = [
+        (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'),
+        (90, 'XC'), (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'),
+        (5, 'V'), (4, 'IV'), (1, 'I')
+    ]
+    numero = ""
     while n > 0:
         for i, r in romanos:
             while n >= i:
                 numero += r
                 n -= i
     print("["+numero+"]")
+
 
 def rima(word1, word2):
 	""" 14: Indica si dos palabrar riman. Si coinciden las 3 ultimas letras rima,
