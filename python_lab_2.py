@@ -69,9 +69,13 @@ def word_filter(list_of_words, n):
     """
     lists = []
     for item in list_of_words:
-        if len(item) > n:
-            lists.append(item)
+        len_calculator(item, n, lists)
     print(lists)
+
+
+def len_calculator(item, n, lists):
+    if len(item) > n:
+        lists.append(item)
 
 
 def string_length(list):
