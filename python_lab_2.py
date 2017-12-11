@@ -202,22 +202,17 @@ def factorial(n):
 
 
 def to_roman(n):
-    """ 13: Convert number integer to Roman numeral
-    >>> to_roman(598)
-    [DXCVIII]
-    """
-    romanos = [
-        (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'),
-        (90, 'XC'), (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'),
-        (5, 'V'), (4, 'IV'), (1, 'I')
-    ]
-    numero = ""
-    while n > 0:
-        for i, r in romanos:
-            while n >= i:
-                numero += r
-                n -= i
-    print("["+numero+"]")
+    val = (1000, 900,  500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+    syb = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX',
+           'V', 'IV', 'I')
+    roman_num = ""
+    list = []
+    for i in range(len(val)):
+        count = int(n / val[i])
+        roman_num += syb[i] * count
+        n -= val[i] * count
+    list.append(roman_num)
+    return str(list).replace("'", "")
 
 
 def rima(word1, word2):
