@@ -160,15 +160,22 @@ def is_prime(n):
     False
     """
     if n > 1:
-        for i in range(2, n):
-            if (n % i) == 0:
-                print(False)
-                break
-            else:
-                print(True)
-                break
-        else:
-            print(False)
+        is_prime_helper(n)
+
+
+def is_prime_helper(n):
+    for i in range(2, n):
+        is_prime_comparison(n, i)
+        break
+    else:
+        print(False)
+
+
+def is_prime_comparison(n, i):
+    if (n % i) == 0:
+        print(False)
+    else:
+        print(True)
 
 
 def factorial(n):
