@@ -124,8 +124,9 @@ def square(lists):
     >>> square(l)
     [0, 1, 4, 9]
     """
-	#print(list(1 for i in x if i.isupper()))
-    print(list(map(lambda x:x**2, lists)))
+    # print(list(1 for i in x if i.isupper()))
+    print(list(map(lambda x: x**2, lists)))
+
 
 def is_prime(n):
     """ 11:  Return if n is prime.
