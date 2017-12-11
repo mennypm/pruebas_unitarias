@@ -49,16 +49,18 @@ def may_20(*tup):
                 y = y + ', ' + str(x)
     print(y)
 
+
 def word_filter(list_of_words, n):
     """ 4: Filtra las palabras que contienen más de n caracteres.
     >>> word_filter(['hello','bye', 'computer', 'software', 'python'], 5)
     ['computer', 'software', 'python']
     """
-    lists=[]
+    lists = []
     for item in list_of_words:
         if len(item) > n:
             lists.append(item)
     print(lists)
+
 
 def string_length(list):
 	""" 5: imprime el largo de una cadena de caracteres
