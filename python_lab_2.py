@@ -34,6 +34,7 @@ def lower_up(lower, upper):
         # print(args)
         # print(str(kwargs).replace('\'', '"'))
 
+
 def may_20(*tup):
     """ 3: Definir una tupla con 10 números. Imprimir la cantidad
         de números superiores a 20.
@@ -42,12 +43,23 @@ def may_20(*tup):
     """
     y = ""
     for x in tup:
-        if x > 20:
-            if y == "":
-                y = str(x)
-            else:
-                y = y + ', ' + str(x)
+        y = helper_may_20(x, y)
     print(y)
+
+
+def if_may_20(x, y):
+    if y == "":
+        return str(x)
+    else:
+        y = y + ', ' + str(x)
+        return y
+
+
+def helper_may_20(x, y):
+    z = ""
+    if x > 20:
+        z = if_may_20(x, y)
+    return z
 
 
 def word_filter(list_of_words, n):
@@ -153,7 +165,7 @@ def factorial(n):
     Else return a long.
     >>> [factorial(n) for n in range(6)]
     [1, 1, 2, 6, 24, 120]
-    >>> [factorial(long(n)) for n in range(6)]
+    >>> [factorial(n) for n in range(6)]
     [1, 1, 2, 6, 24, 120]
     >>> factorial(30)
     265252859812191058636308480000000
