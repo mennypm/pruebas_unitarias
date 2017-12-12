@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
-""" Repaso interactivo de python
-"""
 from typing import List
 from typing import Tuple
+from hypothesis import given
+from collections import OrderedDict
+import hypothesis.strategies as st
+
+""" Repaso interactivo de python
+"""
 
 
+@given(st.integers(), st.integers())
 def lower_up(lower: int, upper: int) -> None:
         """ 1: Returns a list of numbers from the lower number to the upper number:
         >>> lower_up(5,15)
@@ -34,7 +39,7 @@ def all_the_args(*args, **kwargs):
     print(args)
     my_dict = {}
     keys = kwargs.keys()
-    keys = reversed(sorted(keys))  # order them in some way
+    keys = sorted(keys)
     for k in keys:
         my_dict[k] = kwargs[k]
     print(my_dict)
