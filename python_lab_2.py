@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """ Repaso interactivo de python
 """
+from typing import List
+from typing import Tuple
 
 
-def lower_up(lower, upper):
+def lower_up(lower: int, upper: int) -> None:
         """ 1: Returns a list of numbers from the lower number to the upper number:
         >>> lower_up(5,15)
         5
@@ -18,48 +20,51 @@ def lower_up(lower, upper):
         14
         15
         """
-        for x in range(lower, upper+1):
+        for x in range(lower, upper + 1):
             print(x)
 
 
-# def all_the_args(*args, **kwargs):
+def all_the_args(*args, **kwargs):
+    """ 2: Return an array. Use * to expand positional args
+    and use ** to expand keyword args
+    >>> all_the_args(1, 2, a=3, b=4)
+    (1, 2)
+    {'a': 3, 'b': 4}
+    """
+    print(args)
+    my_dict = {}
+    keys = kwargs.keys()
+    keys = reversed(sorted(keys))  # order them in some way
+    for k in keys:
+        my_dict[k] = kwargs[k]
+    print(my_dict)
 
-#       """ 2: Return an array. Use * to expand positional args and use ** to
-#       expand keyword args
 
-#       >>> all_the_args(1, 2, a=3, b=4)
-#       (1, 2)
-#       {"a": 3, "b": 4}
-#       """
-        # print(args)
-        # print(str(kwargs).replace('\'', '"'))
-
-
-def may_20(*tup):
-    """ 3: Definir una tupla con 10 números. Imprimir la cantidad
-        de números superiores a 20.
-    >>> may_20(10, 16, 22, 26, 27, 30)
+def may_20(tup: Tuple[int]) -> None:
+    """ 3: Definir una tupla con 10 números.
+    Imprimir la cantidad de números superiores a 20.
+    >>> may_20((10, 16, 22, 26, 27, 30))
     22, 26, 27, 30
     """
-    y = ""
+    superiores = ""
     for x in tup:
-        y = helper_may_20(x, y)
-    print(y)
+        superiores = compara_20(superiores, x)
+
+    print(superiores)
 
 
-def if_may_20(x, y):
-    if y == "":
-        return str(x)
+def compara_20(cad_temp: str, cadena: int) -> str:
+    if cadena > 20:
+        cad_temp = concatena(cad_temp, cadena)
+    return cad_temp
+
+
+def concatena(cad_temp: str, cadena: int) -> str:
+    if cad_temp == "":
+        cad_temp = str(cadena)
     else:
-        y = y + ', ' + str(x)
-        return y
-
-
-def helper_may_20(x, y):
-    z = ""
-    if x > 20:
-        z = if_may_20(x, y)
-    return z
+        cad_temp = cad_temp + ", " + str(cadena)
+    return cad_temp
 
 
 def word_filter(list_of_words, n):
@@ -73,12 +78,12 @@ def word_filter(list_of_words, n):
     print(lists)
 
 
-def len_calculator(item, n, lists):
+def len_calculator(item: str, n: int, lists: List[str]) -> None:
     if len(item) > n:
         lists.append(item)
 
 
-def string_length(list):
+def string_length(list: str) -> None:
     """ 5: imprime el largo de una cadena de caracteres
     >>> string_length("popularity")
     10
@@ -86,7 +91,7 @@ def string_length(list):
     print(len(list))
 
 
-def is_vocal(x):
+def is_vocal(x: str) -> None:
     """ 6: Determines if it is vocal
     >>> is_vocal('a')
     True
@@ -99,7 +104,7 @@ def is_vocal(x):
         print(False)
 
 
-def is_leap_year(year):
+def is_leap_year(year: int) -> None:
     """ 7: Determines if a year is a leap year.
     >>> is_leap_year(2016)
     True
@@ -109,14 +114,14 @@ def is_leap_year(year):
     helper_is_leap_year_second_condition(year)
 
 
-def helper_is_leap_year_second_condition(year):
+def helper_is_leap_year_second_condition(year: int) -> None:
     if year % 4 == 0 and year % 100 != 0:
         print(True)
     else:
         print(False)
 
 
-def has_uppercase(word):
+def has_uppercase(word: str) -> None:
     """ 8: Evaluate if a word has uppercase letters
     >>> has_uppercase("MayuSculA")
     3
@@ -124,7 +129,7 @@ def has_uppercase(word):
     print(sum(1 for i in word if i.isupper()))
 
 
-def contar_vocales(cadena):
+def contar_vocales(cadena: str) -> None:
     """ 9: Return number of vocales in a word.
     >>> contar_vocales('murcielago')
     5
@@ -135,14 +140,14 @@ def contar_vocales(cadena):
     print(sum)
 
 
-def is_vowel(x):
+def is_vowel(x: str) -> int:
     if x == "a" or x == "e" or x == "i" or x == "o" or x == "u":
         return 1
     else:
         return 0
 
 
-def square(lists):
+def square(lists: List[int]) -> None:
     """ 10: Calculate the square of the numbers in a list
     >>> l = [0, 1, 2, 3]
     >>> square(l)
@@ -152,7 +157,7 @@ def square(lists):
     print(list(map(lambda x: x**2, lists)))
 
 
-def is_prime(n):
+def is_prime(n: int) -> None:
     """ 11:  Return if n is prime.
     >>> is_prime(5)
     True
@@ -163,7 +168,7 @@ def is_prime(n):
         is_prime_helper(n)
 
 
-def is_prime_helper(n):
+def is_prime_helper(n: int) -> None:
     for i in range(2, n):
         is_prime_comparison(n, i)
         break
@@ -171,14 +176,14 @@ def is_prime_helper(n):
         print(False)
 
 
-def is_prime_comparison(n, i):
+def is_prime_comparison(n: int, i: int) ->None:
     if (n % i) == 0:
         print(False)
     else:
         print(True)
 
 
-def factorial(n):
+def factorial(n: int) -> int:
     """ 12: Return the factorial of n, an exact integer >= 0.
     If the result is small enough to fit in an int, return an int.
     Else return a long.
@@ -201,7 +206,7 @@ def factorial(n):
     return result
 
 
-def to_roman(n):
+def to_roman(n: int) -> str:
     val = (1000, 900,  500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
     syb = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX',
            'V', 'IV', 'I')
@@ -215,7 +220,7 @@ def to_roman(n):
     return str(list).replace("'", "")
 
 
-def rima(word1, word2):
+def rima(word1: str, word2: str) -> None:
     """ 14: Indica si dos palabrar riman. Si coinciden las 3 ultimas letras rima,
     si ncoinciden solo 2 rima un poco, si coincide solo 1 no rima.
     >>> rima('flor', 'coliflor')
@@ -231,21 +236,21 @@ def rima(word1, word2):
         print('no rima')
 
 
-def rima3(word1, word2):
+def rima3(word1: str, word2: str) -> None:
     if word1[len(word1) - 2] == word2[len(word2) - 2]:
         rima2(word1, word2)
     else:
         print('no rima')
 
 
-def rima2(word1, word2):
+def rima2(word1: str, word2: str) -> None:
     if word1[len(word1)-3] == word2[len(word2)-3]:
         print('rima')
     else:
         print('rima un poco')
 
 
-def capital(pesos, interes, anios):
+def capital(pesos: int, interes: float, anios: int) -> None:
     """ 15: Pide una cantidad de pesos, una tasa de interés y un
     número de años. Muestra en cuanto se habrá convertido el
     capital inicial transcurridos esos años si cada año se
